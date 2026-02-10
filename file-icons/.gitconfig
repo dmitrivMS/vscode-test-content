@@ -1,0 +1,29 @@
+[user]
+	name = Jane Developer
+	email = jane@example.com
+
+[core]
+	autocrlf = input
+	editor = code --wait
+	pager = delta
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
+
+[push]
+	autoSetupRemote = true
+
+[alias]
+	st = status --short --branch
+	lg = log --oneline --graph --decorate --all -20
+	amend = commit --amend --no-edit
+	unstage = reset HEAD --
+
+[diff]
+	colorMoved = default
+
+[merge]
+	conflictStyle = zdiff3

@@ -1,0 +1,31 @@
+$primary-color: #3498db
+$font-stack: 'Helvetica Neue', Arial, sans-serif
+$base-spacing: 16px
+
+body
+  font-family: $font-stack
+  color: #333
+  line-height: 1.6
+
+.container
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 $base-spacing
+
+.header
+  background-color: $primary-color
+  padding: $base-spacing * 2
+  color: white
+
+  nav
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    a
+      color: white
+      text-decoration: none
+      margin-left: $base-spacing
+
+      &:hover
+        text-decoration: underline

@@ -1,0 +1,32 @@
+# Troubleshooting Guide
+
+## Common Issues
+
+### Connection Timeout
+
+**Symptom:** Requests fail with `ETIMEDOUT` after 30 seconds.
+
+**Solution:** Check your firewall settings and ensure port 443 is open.
+
+```bash
+curl -v https://api.example.com/health
+```
+
+### Authentication Errors
+
+**Symptom:** `401 Unauthorized` on all API calls.
+
+**Solution:**
+1. Verify your API key is not expired
+2. Ensure the key has the required scopes
+3. Check that the `Authorization` header format is correct
+
+### High Memory Usage
+
+**Symptom:** Process memory exceeds 2GB.
+
+**Solution:** Enable garbage collection logging and check for event listener leaks:
+
+```bash
+node --expose-gc --max-old-space-size=4096 server.js
+```

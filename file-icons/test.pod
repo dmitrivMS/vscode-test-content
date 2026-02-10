@@ -1,0 +1,42 @@
+=head1 NAME
+
+App::TaskRunner - A lightweight task scheduling framework
+
+=head1 SYNOPSIS
+
+    use App::TaskRunner;
+
+    my $runner = App::TaskRunner->new(workers => 4);
+    $runner->add_task(sub { process_batch($_[0]) }, @items);
+    $runner->run_all;
+
+=head1 DESCRIPTION
+
+App::TaskRunner provides a simple interface for running multiple tasks
+in parallel using a pool of worker processes. It handles job distribution,
+error collection, and graceful shutdown.
+
+=head1 METHODS
+
+=over 4
+
+=item B<new(%options)>
+
+Creates a new task runner. Accepts C<workers> (default: 2) and
+C<timeout> (default: 300 seconds).
+
+=item B<add_task($coderef, @args)>
+
+Enqueues a task for execution.
+
+=item B<run_all>
+
+Executes all enqueued tasks and returns a list of results.
+
+=back
+
+=head1 AUTHOR
+
+Jane Doe E<lt>jane@example.comE<gt>
+
+=cut

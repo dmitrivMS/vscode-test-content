@@ -1,0 +1,24 @@
+# .Rprofile - R session startup configuration
+
+options(
+  repos = c(CRAN = "https://cloud.r-project.org"),
+  warn = 1,
+  scipen = 999,
+  stringsAsFactors = FALSE,
+  max.print = 200,
+  prompt = "R> ",
+  continue = "+> "
+)
+
+# Load commonly used packages quietly
+.First <- function() {
+  suppressPackageStartupMessages({
+    if (requireNamespace("devtools", quietly = TRUE)) library(devtools)
+    if (requireNamespace("usethis", quietly = TRUE)) library(usethis)
+  })
+  cat("R session started at", format(Sys.time(), "%Y-%m-%d %H:%M"), "\n")
+}
+
+.Last <- function() {
+  cat("Session ended at", format(Sys.time(), "%H:%M"), "\n")
+}

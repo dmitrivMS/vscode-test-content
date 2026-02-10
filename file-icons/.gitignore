@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+build/
+
+# Source maps
+*.js.map
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+# *.log (commented out to keep test.log tracked)
+logs/
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# IDE settings
+.idea/
+.vscode/settings.json
+*.sublime-workspace

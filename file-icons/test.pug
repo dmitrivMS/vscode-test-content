@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title= pageTitle
+    link(rel="stylesheet" href="/css/main.css")
+  body
+    header.site-header
+      nav.navbar
+        a.logo(href="/") MyApp
+        ul.nav-links
+          each item in navItems
+            li
+              a(href=item.url class=item.active ? 'active' : '')= item.label
+
+    main.content
+      h1= heading
+      if articles.length
+        each article in articles
+          article.card
+            h2= article.title
+            p= article.excerpt
+            a(href=`/posts/${article.slug}`) Read more
+      else
+        p No articles found.
+
+    footer
+      p &copy; #{new Date().getFullYear()} MyApp. All rights reserved.

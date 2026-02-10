@@ -1,0 +1,35 @@
+@model IEnumerable<WebApp.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employee Directory";
+}
+
+<h1>Employee Directory</h1>
+
+<div class="mb-3">
+    <a asp-action="Create" class="btn btn-primary">Add Employee</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.First().FullName)</th>
+            <th>@Html.DisplayNameFor(m => m.First().Department)</th>
+            <th>@Html.DisplayNameFor(m => m.First().HireDate)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <td>@emp.FullName</td>
+                <td>@emp.Department</td>
+                <td>@emp.HireDate.ToString("MMM d, yyyy")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@emp.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

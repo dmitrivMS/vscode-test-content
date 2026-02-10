@@ -1,0 +1,22 @@
+{
+    "esversion": 6,
+    "browser": true,
+    "node": true,
+    "strict": "implied",
+    "undef": true,
+    "unused": true,
+    "eqeqeq": true,
+    "curly": true,
+    "forin": true,
+    "noarg": true,
+    "nonew": true,
+    "maxdepth": 4,
+    "maxparams": 5,
+    "maxlen": 120,
+    "globals": {
+        "describe": false,
+        "it": false,
+        "expect": false,
+        "beforeEach": false
+    }
+}

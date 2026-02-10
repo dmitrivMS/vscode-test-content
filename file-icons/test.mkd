@@ -1,0 +1,23 @@
+# API Reference Guide
+
+## Authentication
+
+All API requests require a valid Bearer token in the `Authorization` header.
+
+```bash
+curl -H "Authorization: Bearer <token>" https://api.example.com/v2/users
+```
+
+## Rate Limiting
+
+| Tier       | Requests/min | Burst |
+|------------|-------------|-------|
+| Free       | 60          | 10    |
+| Pro        | 600         | 50    |
+| Enterprise | 6000        | 200   |
+
+## Error Codes
+
+- **401** — Invalid or expired token
+- **429** — Rate limit exceeded; retry after `Retry-After` header value
+- **503** — Service temporarily unavailable

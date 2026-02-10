@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+    <book isbn="978-0-13-468599-1">
+        <title>The Pragmatic Programmer</title>
+        <author>David Thomas</author>
+        <author>Andrew Hunt</author>
+        <year>2019</year>
+        <publisher>Addison-Wesley</publisher>
+        <genre>Software Engineering</genre>
+    </book>
+    <book isbn="978-0-596-51774-8">
+        <title>JavaScript: The Good Parts</title>
+        <author>Douglas Crockford</author>
+        <year>2008</year>
+        <publisher>O'Reilly Media</publisher>
+        <genre>Programming</genre>
+    </book>
+    <book isbn="978-0-201-63361-0">
+        <title>Design Patterns</title>
+        <author>Erich Gamma</author>
+        <year>1994</year>
+        <publisher>Addison-Wesley</publisher>
+        <genre>Software Engineering</genre>
+    </book>
+</library>

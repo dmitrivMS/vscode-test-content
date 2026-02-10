@@ -1,0 +1,24 @@
+open System
+open System.IO
+
+let readLines (path: string) =
+    File.ReadAllLines(path) |> Array.toList
+
+let countWords (line: string) =
+    line.Split([| ' '; '\t' |], StringSplitOptions.RemoveEmptyEntries).Length
+
+let analyzeFile path =
+    let lines = readLines path
+    let totalLines = List.length lines
+    let totalWords = lines |> List.sumBy countWords
+    let nonEmpty = lines |> List.filter (fun l -> l.Trim().Length > 0) |> List.length
+    printfn "File: %s" path
+    printfn "  Lines: %d (non-empty: %d)" totalLines nonEmpty
+    printfn "  Words: %d" totalWords
+    printfn "  Avg words/line: %.1f" (float totalWords / float (max nonEmpty 1))
+
+let args = Environment.GetCommandLineArgs()
+if args.Length > 1 then
+    analyzeFile args.[1]
+else
+    printfn "Usage: dotnet fsi test.fsscript <filename>"

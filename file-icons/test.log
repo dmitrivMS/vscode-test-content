@@ -1,0 +1,14 @@
+2026-02-10 08:00:12.345 [INFO]  Application starting up (v2.4.1)
+2026-02-10 08:00:12.567 [INFO]  Loading configuration from /etc/myapp/config.ini
+2026-02-10 08:00:12.890 [INFO]  Database connection pool initialized (max=25)
+2026-02-10 08:00:13.012 [INFO]  Redis cache connected at 127.0.0.1:6379
+2026-02-10 08:00:13.234 [INFO]  HTTP server listening on port 8080
+2026-02-10 08:01:45.678 [INFO]  GET /api/users 200 12ms
+2026-02-10 08:01:46.123 [WARN]  Slow query detected: SELECT * FROM orders (took 3200ms)
+2026-02-10 08:02:10.456 [INFO]  POST /api/orders 201 45ms
+2026-02-10 08:03:55.789 [ERROR] Connection refused to smtp.example.com:587 - retrying in 5s
+2026-02-10 08:04:00.890 [INFO]  SMTP connection re-established
+2026-02-10 08:05:22.111 [INFO]  GET /api/orders/1542 200 8ms
+2026-02-10 08:06:30.222 [WARN]  Memory usage at 78% (1.56GB / 2.00GB)
+2026-02-10 08:10:00.000 [INFO]  Scheduled task: cleanup_expired_sessions completed (removed 342 sessions)
+2026-02-10 08:15:45.333 [INFO]  GET /health 200 1ms

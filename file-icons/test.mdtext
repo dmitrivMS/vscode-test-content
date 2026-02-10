@@ -1,0 +1,26 @@
+# Architecture Overview
+
+## System Components
+
+The application follows a microservices architecture with three main services:
+
+1. **Gateway Service** — Handles authentication and request routing
+2. **Core Service** — Business logic and data processing  
+3. **Notification Service** — Email, SMS, and push notifications
+
+## Communication
+
+Services communicate via:
+- REST APIs for synchronous operations
+- Message queues (RabbitMQ) for async events
+
+## Data Flow
+
+```
+Client → Gateway → Core Service → Database
+                 → Notification Service → Email/SMS
+```
+
+## Deployment
+
+All services are containerized with Docker and orchestrated via Kubernetes.

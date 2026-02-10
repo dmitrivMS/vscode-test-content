@@ -1,0 +1,42 @@
+@primary-color: #3498db;
+@secondary-color: #2ecc71;
+@font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+@border-radius: 4px;
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: @border-radius;
+    font-family: @font-stack;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &--primary {
+        background-color: @primary-color;
+        color: white;
+        &:hover { background-color: darken(@primary-color, 10%); }
+    }
+
+    &--success {
+        background-color: @secondary-color;
+        color: white;
+        &:hover { background-color: darken(@secondary-color, 10%); }
+    }
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: @border-radius;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &__title { font-size: 1.25rem; margin-bottom: 8px; }
+    &__body { color: #555; line-height: 1.6; }
+}

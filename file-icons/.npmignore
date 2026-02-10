@@ -1,0 +1,30 @@
+# Source and development files
+src/
+test/
+__tests__/
+coverage/
+.nyc_output/
+
+# Config files
+.eslintrc.json
+.prettierrc
+tsconfig.json
+jest.config.js
+.editorconfig
+.github/
+
+# Build tools
+rollup.config.mjs
+webpack.config.js
+Makefile
+
+# Documentation source
+docs/
+*.md
+!README.md
+
+# Misc
+*.map
+*.tsbuildinfo
+.env*
+.DS_Store

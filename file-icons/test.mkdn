@@ -1,0 +1,24 @@
+# Deployment Checklist
+
+## Pre-deploy
+
+1. Run the full test suite: `npm test`
+2. Verify database migrations are up to date
+3. Check environment variables in `.env.production`
+
+## Deploy Steps
+
+- [ ] Tag the release: `git tag v2.4.1`
+- [ ] Push to origin: `git push --tags`
+- [ ] Monitor CI/CD pipeline for failures
+- [ ] Verify health check endpoint returns `200 OK`
+
+## Rollback
+
+If issues are detected within 15 minutes of deploy:
+
+```bash
+kubectl rollout undo deployment/web-api --to-revision=3
+```
+
+> **Note:** Always notify the on-call engineer before rolling back.

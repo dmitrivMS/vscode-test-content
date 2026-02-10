@@ -1,0 +1,21 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+		13B07FBC1A68108700A75B9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		13B07FBD1A68108700A75B9A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MyApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		13B07FBF1A68108700A75B9A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		83CBBA001A601CBA00E9B192 /* MyApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = MyApp; sourceTree = BUILT_PRODUCTS_DIR; };
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+	buildConfigurationList = 83CBB9FA1A601CBA00E9B192;
+	compatibilityVersion = "Xcode 14.0";
+	developmentRegion = en;
+	hasScannedForEncodings = 0;
+	knownRegions = (en, Base);
+	mainGroup = 83CBB9F61A601CBA00E9B192;
+	productRefGroup = 83CBBA001A601CBA00E9B192;
+}

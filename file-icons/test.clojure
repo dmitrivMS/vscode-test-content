@@ -1,0 +1,25 @@
+(ns myapp.cache
+  (:require [clojure.core.cache :as cache]))
+
+(def ttl-ms (* 5 60 1000)) ;; 5 minutes
+
+(defonce app-cache
+  (atom (cache/ttl-cache-factory {} :ttl ttl-ms)))
+
+(defn cache-get [k]
+  (when (cache/has? @app-cache k)
+    (swap! app-cache cache/hit k)
+    (cache/lookup @app-cache k)))
+
+(defn cache-put [k v]
+  (swap! app-cache cache/miss k v)
+  v)
+
+(defn cache-evict [k]
+  (swap! app-cache cache/evict k))
+
+(defn cached-fetch [k fetch-fn]
+  (if-let [v (cache-get k)]
+    v
+    (let [result (fetch-fn)]
+      (cache-put k result))))

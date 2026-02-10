@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!--#echo var="DOCUMENT_NAME" --></title>
+    <!--#include virtual="/includes/head.html" -->
+</head>
+<body>
+    <!--#include virtual="/includes/header.html" -->
+
+    <main>
+        <h1>Welcome to Our Site</h1>
+        <p>Last modified: <!--#echo var="LAST_MODIFIED" --></p>
+        <p>Server name: <!--#echo var="SERVER_NAME" --></p>
+
+        <!--#if expr="$QUERY_STRING = /lang=fr/" -->
+            <p>Bienvenue sur notre site.</p>
+        <!--#else -->
+            <p>Welcome to our website.</p>
+        <!--#endif -->
+    </main>
+
+    <!--#include virtual="/includes/footer.html" -->
+</body>
+</html>

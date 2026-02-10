@@ -1,0 +1,19 @@
+{
+  "directory": "vendor/bower_components",
+  "registry": "https://registry.bower.io",
+  "timeout": 120000,
+  "resolvers": [
+    "bower-resolver-svn"
+  ],
+  "strict-ssl": true,
+  "analytics": false,
+  "interactive": true,
+  "storage": {
+    "packages": "~/.bower/packages",
+    "registry": "~/.bower/registry",
+    "links": "~/.bower/links"
+  },
+  "ignoredDependencies": [
+    "jquery"
+  ]
+}

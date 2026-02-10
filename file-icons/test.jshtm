@@ -1,0 +1,23 @@
+<div id="user-profile">
+    <h2><%= user.displayName %></h2>
+    <p class="email"><%= user.email %></p>
+
+    <% if (user.isAdmin) { %>
+        <span class="badge admin">Administrator</span>
+    <% } %>
+
+    <ul class="activity-log">
+        <% user.recentActivity.forEach(function(activity) { %>
+            <li>
+                <span class="timestamp"><%= activity.date %></span>
+                <span class="action"><%= activity.description %></span>
+            </li>
+        <% }); %>
+    </ul>
+
+    <script>
+        document.getElementById('user-profile').addEventListener('click', function() {
+            console.log('Profile section clicked');
+        });
+    </script>
+</div>

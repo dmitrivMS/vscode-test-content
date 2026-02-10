@@ -1,0 +1,21 @@
+digraph BuildPipeline {
+	rankdir=LR;
+	node [shape=box, style=filled, fillcolor="#e8f4fd", fontname="Helvetica"];
+
+	checkout [label="Checkout\nSource"];
+	install [label="Install\nDependencies"];
+	lint [label="Lint"];
+	test [label="Run Tests"];
+	build [label="Build"];
+	deploy [label="Deploy"];
+
+	checkout -> install;
+	install -> lint;
+	install -> test;
+	lint -> build;
+	test -> build;
+	build -> deploy;
+
+	deploy [fillcolor="#d4edda"];
+	{rank=same; lint; test}
+}

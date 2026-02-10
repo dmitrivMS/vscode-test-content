@@ -1,0 +1,27 @@
+{
+    "preset": "airbnb",
+    "requireCurlyBraces": [
+        "if",
+        "else",
+        "for",
+        "while",
+        "do",
+        "try",
+        "catch"
+    ],
+    "requireSpaceAfterKeywords": [
+        "if",
+        "else",
+        "for",
+        "while",
+        "return"
+    ],
+    "disallowSpacesInFunctionExpression": {
+        "beforeOpeningRoundBrace": true
+    },
+    "validateIndentation": 4,
+    "validateQuoteMarks": "'",
+    "disallowMultipleLineStrings": true,
+    "requireSemicolons": true,
+    "maximumLineLength": 120
+}

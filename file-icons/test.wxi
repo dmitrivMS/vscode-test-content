@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Include xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <?define ProductName = "My Application" ?>
+  <?define ProductVersion = "2.1.0" ?>
+  <?define Manufacturer = "Contoso Ltd." ?>
+  <?define UpgradeCode = "A1B2C3D4-E5F6-7890-ABCD-EF1234567890" ?>
+
+  <DirectoryRef Id="INSTALLFOLDER">
+    <Component Id="CoreLibraries" Guid="12345678-AAAA-BBBB-CCCC-DDDDEEEE0001">
+      <File Source="$(var.BuildDir)\core.dll" KeyPath="yes" />
+      <File Source="$(var.BuildDir)\config.dll" />
+    </Component>
+
+    <Component Id="Documentation" Guid="12345678-AAAA-BBBB-CCCC-DDDDEEEE0002">
+      <File Source="$(var.DocsDir)\readme.txt" KeyPath="yes" />
+      <File Source="$(var.DocsDir)\license.rtf" />
+    </Component>
+  </DirectoryRef>
+</Include>

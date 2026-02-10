@@ -1,0 +1,25 @@
+<?php /** @var array $products */ ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?= $this->escapeHtml($pageTitle) ?></title>
+</head>
+<body>
+    <h1>Product Catalog</h1>
+    <table>
+        <thead>
+            <tr><th>Name</th><th>Price</th><th>Stock</th></tr>
+        </thead>
+        <tbody>
+            <?php foreach ($products as $product): ?>
+            <tr>
+                <td><?= $this->escapeHtml($product['name']) ?></td>
+                <td>$<?= number_format($product['price'], 2) ?></td>
+                <td><?= $product['stock'] > 0 ? 'In Stock' : 'Out of Stock' ?></td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</body>
+</html>

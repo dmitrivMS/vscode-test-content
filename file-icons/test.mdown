@@ -1,0 +1,29 @@
+# Release Notes — v3.2.0
+
+## New Features
+
+- Added dark mode support across all pages
+- Introduced real-time collaboration via WebSocket
+- New CSV export for analytics dashboard
+
+## Bug Fixes
+
+- Fixed memory leak in long-running background tasks
+- Corrected timezone handling for scheduled reports
+- Resolved intermittent 503 errors during deployments
+
+## Breaking Changes
+
+- Removed deprecated `/api/v1/legacy` endpoints
+- Minimum Node.js version is now 18.x
+
+## Migration Guide
+
+Update your configuration file:
+
+```yaml
+server:
+  min_node_version: "18.0.0"
+  websocket:
+    enabled: true
+```

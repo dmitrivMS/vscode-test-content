@@ -1,0 +1,15 @@
+<!ELEMENT catalog (book+)>
+<!ELEMENT book (title, author, year, price, isbn?)>
+<!ATTLIST book id ID #REQUIRED>
+<!ATTLIST book genre (fiction|nonfiction|science|biography) "fiction">
+
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price currency CDATA "USD">
+
+<!ELEMENT isbn (#PCDATA)>
+
+<!ENTITY publisher "Acme Publishing">
+<!ENTITY copyright "© 2025 Acme Publishing. All rights reserved.">

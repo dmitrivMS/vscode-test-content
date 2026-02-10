@@ -1,0 +1,20 @@
+---
+profile::database::host: db.internal.example.com
+profile::database::port: 5432
+profile::database::name: production_app
+profile::database::username: app_service
+profile::database::password: >
+  ENC[PKCS7,MIIBqQYJKoZIhvcNAQcDoIIBmjCCAZYCAQAxggEhMIIBHQIBADAFMAACAQEw
+  DQYJKoZIhvcNAQEBBQAEggEAj8R2yO5kFm4oLz6RA+vB/dU1mzKx9YQHZ3qP
+  k7vF5m2Q==]
+
+profile::app::secret_key: >
+  ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+  DQYJKoZIhvcNAQEBBQAEggDkLP8z2n1FqA==]
+
+profile::app::api_endpoint: https://api.example.com/v2
+profile::app::log_level: info
+profile::app::max_retries: 3
+profile::app::feature_flags:
+  - new_dashboard
+  - beta_notifications

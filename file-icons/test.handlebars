@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{pageTitle}}</title>
+</head>
+<body>
+	<header>
+		<h1>{{companyName}} - Product Catalog</h1>
+	</header>
+
+	{{#if products.length}}
+	<ul class="product-list">
+		{{#each products}}
+		<li class="product-item {{#if this.onSale}}on-sale{{/if}}">
+			<h2>{{this.name}}</h2>
+			<p class="price">${{this.price}}</p>
+			{{#if this.onSale}}
+			<span class="badge">Sale!</span>
+			{{/if}}
+			<p>{{truncate this.description 100}}</p>
+		</li>
+		{{/each}}
+	</ul>
+	{{else}}
+	<p class="empty-state">No products available at this time.</p>
+	{{/if}}
+
+	<footer>
+		<p>&copy; {{currentYear}} {{companyName}}</p>
+	</footer>
+</body>
+</html>

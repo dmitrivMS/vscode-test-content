@@ -1,0 +1,25 @@
+{:application
+ {:name "inventory-service"
+  :version "1.4.2"
+  :description "Product inventory management"}
+
+ :server
+ {:port 8080
+  :host "0.0.0.0"
+  :max-threads 200}
+
+ :database
+ {:subprotocol "postgresql"
+  :subname "//localhost:5432/inventory"
+  :user "app_user"
+  :password #env "DB_PASSWORD"
+  :pool-size 20
+  :idle-timeout 300000}
+
+ :logging
+ {:level :info
+  :appenders [:console :file]
+  :file-path "/var/log/inventory/app.log"}
+
+ :features
+ #{:caching :rate-limiting :audit-log}}

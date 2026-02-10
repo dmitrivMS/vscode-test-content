@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Blog Post
+    link(rel="stylesheet", href="/css/main.css")
+  body
+    header.site-header
+      nav
+        ul.nav-list
+          li: a(href="/") Home
+          li: a(href="/blog") Blog
+          li: a(href="/about") About
+
+    main.content
+      article.post
+        h1= title
+        p.meta Published on #{date} by #{author}
+        .body
+          block content
+
+    footer
+      p &copy; 2026 My Blog. All rights reserved.

@@ -1,0 +1,23 @@
+<div class="user-profile">
+	<div class="avatar">
+		<img src="{{user.avatarUrl}}" alt="{{user.displayName}}" />
+	</div>
+	<div class="info">
+		<h2>{{user.displayName}}</h2>
+		<p class="email">{{user.email}}</p>
+		{{#if user.bio}}
+		<p class="bio">{{user.bio}}</p>
+		{{/if}}
+	</div>
+
+	<h3>Recent Activity</h3>
+	{{#each user.activities}}
+	<div class="activity-item">
+		<span class="timestamp">{{formatDate this.date "MMM D, YYYY"}}</span>
+		<span class="action">{{this.action}}</span>
+		{{#unless this.isPrivate}}
+		<a href="{{this.link}}">View details</a>
+		{{/unless}}
+	</div>
+	{{/each}}
+</div>

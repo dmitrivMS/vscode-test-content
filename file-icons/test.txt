@@ -1,0 +1,17 @@
+Meeting Notes - Project Status Review
+Date: 2026-02-10
+Attendees: Alice, Bob, Charlie, Diana
+
+Action Items:
+1. Alice to finalize API documentation by Friday
+2. Bob to fix the authentication timeout bug (#4521)
+3. Charlie to run performance benchmarks on staging
+4. Diana to review pull requests for the v2.1 release
+
+Key Decisions:
+- Migrate database to PostgreSQL 16 by end of Q1
+- Adopt the new logging framework starting next sprint
+- Weekly sync meetings moved to Tuesdays at 10am
+
+Next Meeting: 2026-02-17 at 10:00 AM
+Location: Conference Room B / Zoom link in calendar invite

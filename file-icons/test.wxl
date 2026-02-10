@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WixLocalization Culture="en-US" Codepage="1252"
+    xmlns="http://wixtoolset.org/schemas/v4/wxl">
+  <String Id="ProductName">My Application</String>
+  <String Id="ProductDescription">A powerful desktop application for managing tasks.</String>
+  <String Id="InstallDirDlgTitle">Choose Installation Folder</String>
+  <String Id="InstallDirDlgDescription">Select the folder where [ProductName] will be installed.</String>
+  <String Id="WelcomeTitle">Welcome to [ProductName] Setup</String>
+  <String Id="WelcomeDescription">This wizard will guide you through the installation of [ProductName] version [ProductVersion].</String>
+  <String Id="FinishTitle">Installation Complete</String>
+  <String Id="FinishDescription">[ProductName] has been successfully installed. Click Finish to exit the wizard.</String>
+  <String Id="LaunchCheckbox">Launch [ProductName] after setup</String>
+  <String Id="LicenseAgreement">Please read the following license agreement carefully.</String>
+</WixLocalization>

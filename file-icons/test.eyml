@@ -1,0 +1,19 @@
+---
+secrets:
+  smtp_password: >
+    ENC[PKCS7,MIIBiQYJKoZIhvcNAQcDoIIBejCCAXYCAQAxggEhMIIBHQIBADAFMAACAQEw
+    DQYJKoZIhvcNAQEBBQAEggEAh92kP5w==]
+  jwt_signing_key: >
+    ENC[PKCS7,MIIBqQYJKoZIhvcNAQcDoIIBmjCCAZYCAQAxggEhMIIBHQIBADAFMAACAQEw
+    DQYJKoZIhvcNAQEB8xLm2wQ==]
+
+config:
+  redis_host: cache.internal.example.com
+  redis_port: 6379
+  session_ttl: 3600
+  allowed_origins:
+    - https://app.example.com
+    - https://admin.example.com
+  rate_limit:
+    requests_per_minute: 120
+    burst: 30

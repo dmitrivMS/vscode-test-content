@@ -1,0 +1,26 @@
+# Security Policy
+
+## Supported Versions
+
+| Version | Supported |
+|---------|-----------|
+| 3.x     | Yes       |
+| 2.x     | Security patches only |
+| 1.x     | No        |
+
+## Reporting a Vulnerability
+
+Please report security vulnerabilities via email to security@example.com.
+
+**Do NOT open a public issue** for security-related bugs.
+
+## Response Timeline
+
+- **Acknowledgement:** within 24 hours
+- **Initial assessment:** within 72 hours
+- **Fix release:** within 14 days for critical issues
+
+## Disclosure Policy
+
+We follow a 90-day responsible disclosure timeline. After a fix is released,
+we will publish a security advisory with full details.

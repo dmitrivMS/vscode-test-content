@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F0FF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#skyGradient)" />
+  <circle cx="160" cy="40" r="25" fill="#FFD700" />
+  <path d="M0 140 Q50 110 100 130 Q150 150 200 120 L200 200 L0 200 Z" fill="#228B22" />
+  <rect x="85" y="130" width="30" height="40" fill="#8B4513" />
+  <polygon points="100,100 75,140 125,140" fill="#006400" />
+  <polygon points="100,110 80,140 120,140" fill="#008000" />
+</svg>
