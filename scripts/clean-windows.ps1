@@ -85,6 +85,36 @@ Set-ItemProperty -Path $regPath -Name 'DisableWindowsSpotlightOnSettings' -Value
 Set-ItemProperty -Path $regPath -Name 'DisableWindowsConsumerFeatures' -Value 1 -Type DWord
 Write-Host 'Get Started disabled via policy.'
 
+# Prevent specific Appx packages from being reinstalled by Windows Update or
+# feature upgrades. Writing an empty key under the Deprovisioned store tells
+# the deployment engine the package was intentionally removed.
+Write-Host 'Marking packages as deprovisioned to block reinstall...'
+$deprovRoot = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned'
+foreach ($familyName in @(
+    'Microsoft.CompanyPortal_8wekyb3d8bbwe'
+    'Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe'
+)) {
+    $keyPath = Join-Path $deprovRoot $familyName
+    if (-not (Test-Path $keyPath)) {
+        New-Item -Path $keyPath -Force | Out-Null
+        Write-Host "Marked deprovisioned: $familyName"
+    } else {
+        Write-Host "Already deprovisioned: $familyName"
+    }
+}
+
+# Disable Feedback Hub via Data Collection policy (prevents prompts too)
+$dataCollPath = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection'
+if (-not (Test-Path $dataCollPath)) { New-Item -Path $dataCollPath -Force | Out-Null }
+Set-ItemProperty -Path $dataCollPath -Name 'DoNotShowFeedbackNotifications' -Value 1 -Type DWord
+Write-Host 'Feedback notifications disabled via policy.'
+
+# Block Remote Help from being silently reinstalled by Intune/MDM
+$remoteHelpPolicy = 'HKLM:\SOFTWARE\Policies\Microsoft\RemoteHelp'
+if (-not (Test-Path $remoteHelpPolicy)) { New-Item -Path $remoteHelpPolicy -Force | Out-Null }
+Set-ItemProperty -Path $remoteHelpPolicy -Name 'DisableRemoteHelp' -Value 1 -Type DWord
+Write-Host 'Remote Help disabled via policy.'
+
 # Remote Help is an MSI application, not an Appx package.
 # Query registry instead of Win32_Product (which is extremely slow).
 $uninstallPaths = @(
